@@ -1,0 +1,502 @@
+/* Microsoft Edge Theme - Complete Design System */
+
+/* Google Fonts - Segoe UI for Edge feel */
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for Edge Theme */
+:root {
+    --edge-primary: #0078d4;
+    --edge-primary-hover: #106ebe;
+    --edge-secondary: #40e0d0;
+    --edge-accent: #0078d4;
+    --edge-background: #f3f2f1;
+    --edge-surface: #ffffff;
+    --edge-surface-hover: #f5f5f5;
+    --edge-text-primary: #323130;
+    --edge-text-secondary: #605e5c;
+    --edge-text-tertiary: #8a8886;
+    --edge-border: #edebe9;
+    --edge-border-hover: #d2d0ce;
+    --edge-shadow: rgba(0, 0, 0, 0.133);
+    --edge-card-shadow: 0 1.6px 3.6px rgba(0, 0, 0, 0.132), 0 0.3px 0.9px rgba(0, 0, 0, 0.108);
+    --edge-hover-shadow: 0 6.4px 14.4px rgba(0, 0, 0, 0.132), 0 1.2px 3.6px rgba(0, 0, 0, 0.108);
+    --edge-radius: 4px;
+    --edge-radius-large: 8px;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: var(--edge-background);
+    color: var(--edge-text-primary);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header - Edge Style */
+#site-header {
+    background: linear-gradient(135deg, var(--edge-primary) 0%, var(--edge-secondary) 100%);
+    color: white;
+    padding: 20px 0;
+    box-shadow: var(--edge-card-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+#site-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+    z-index: 0;
+}
+
+#site-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.site-branding h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.site-branding h1 a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.site-branding h1 a:hover {
+    opacity: 0.8;
+}
+
+.site-branding .site-description {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+#main-navigation {
+    float: right;
+    margin-top: 8px;
+}
+
+#main-navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#main-navigation li {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+#main-navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: var(--edge-radius);
+    transition: all 0.2s ease;
+}
+
+#main-navigation a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Top Content Section - Edge Cards */
+#top-content {
+    background: var(--edge-surface);
+    padding: 40px 0;
+    border-bottom: 1px solid var(--edge-border);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.search-section,
+.categories-section,
+.content-list-section {
+    background: var(--edge-surface);
+    border: 1px solid var(--edge-border);
+    border-radius: var(--edge-radius-large);
+    padding: 20px;
+    box-shadow: var(--edge-card-shadow);
+    transition: all 0.2s ease;
+}
+
+.search-section:hover,
+.categories-section:hover,
+.content-list-section:hover {
+    box-shadow: var(--edge-hover-shadow);
+    border-color: var(--edge-border-hover);
+}
+
+.search-section h3,
+.categories-section h3,
+.content-list-section h3 {
+    margin: 0 0 16px 0;
+    color: var(--edge-primary);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.search-section h3::before {
+    content: 'Search';
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.categories-section h3::before {
+    content: 'Category';
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.content-list-section h3::before {
+    content: 'List';
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.search-section form {
+    display: flex;
+    gap: 8px;
+}
+
+.search-section input[type="search"] {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--edge-border);
+    border-radius: var(--edge-radius);
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+    transition: border-color 0.2s ease;
+}
+
+.search-section input[type="search"]:focus {
+    outline: none;
+    border-color: var(--edge-primary);
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+}
+
+.search-section button {
+    padding: 10px 16px;
+    background: var(--edge-primary);
+    color: white;
+    border: none;
+    border-radius: var(--edge-radius);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+.search-section button:hover {
+    background: var(--edge-primary-hover);
+}
+
+.categories-section ul,
+.content-list-section .content-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.categories-section li,
+.content-list-section li {
+    margin-bottom: 8px;
+}
+
+.categories-section li a,
+.content-list-section li a {
+    color: var(--edge-text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    padding: 8px 12px;
+    border-radius: var(--edge-radius);
+    transition: all 0.2s ease;
+}
+
+.categories-section li a:hover,
+.content-list-section li a:hover {
+    background: var(--edge-surface-hover);
+    color: var(--edge-primary);
+}
+
+/* Main Content - Edge Style */
+#site-content {
+    background: var(--edge-surface);
+    padding: 40px 0;
+    min-height: 400px;
+}
+
+#hero-section {
+    text-align: center;
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--edge-primary) 0%, var(--edge-secondary) 100%);
+    color: white;
+    border-radius: var(--edge-radius-large);
+    margin-bottom: 40px;
+    box-shadow: var(--edge-card-shadow);
+}
+
+#hero-section h2 {
+    margin: 0 0 16px 0;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+#hero-section p {
+    margin: 0 0 24px 0;
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    display: inline-block;
+    background: white;
+    color: var(--edge-primary);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: var(--edge-radius);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: var(--edge-card-shadow);
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--edge-hover-shadow);
+}
+
+.button-secondary {
+    display: inline-block;
+    background: var(--edge-surface);
+    color: var(--edge-text-primary);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: var(--edge-radius);
+    font-weight: 500;
+    border: 1px solid var(--edge-border);
+    transition: all 0.2s ease;
+}
+
+.button-secondary:hover {
+    background: var(--edge-surface-hover);
+    border-color: var(--edge-border-hover);
+}
+
+/* Posts Grid - Edge Cards */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.post-card {
+    background: var(--edge-surface);
+    border: 1px solid var(--edge-border);
+    border-radius: var(--edge-radius-large);
+    padding: 24px;
+    box-shadow: var(--edge-card-shadow);
+    transition: all 0.2s ease;
+}
+
+.post-card:hover {
+    box-shadow: var(--edge-hover-shadow);
+    transform: translateY(-2px);
+}
+
+.post-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.post-card h3 a {
+    color: var(--edge-text-primary);
+    text-decoration: none;
+}
+
+.post-card h3 a:hover {
+    color: var(--edge-primary);
+}
+
+.post-card p {
+    margin: 0 0 16px 0;
+    color: var(--edge-text-secondary);
+    font-size: 14px;
+}
+
+.read-more {
+    color: var(--edge-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Footer - Edge Style */
+#site-footer {
+    background: linear-gradient(180deg, #323130 0%, #1e1e1e 100%);
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 32px;
+}
+
+.footer-section h3 {
+    margin: 0 0 16px 0;
+    color: var(--edge-secondary);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-info a {
+    color: var(--edge-secondary);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.social-links p {
+    margin: 8px 0;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--edge-secondary);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Edge Theme Toggle Button */
+.edge-theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--edge-primary) 0%, var(--edge-secondary) 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: var(--edge-card-shadow);
+    z-index: 1000;
+    transition: all 0.2s ease;
+}
+
+.edge-theme-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--edge-hover-shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    #main-navigation {
+        float: none;
+        text-align: center;
+        margin-top: 16px;
+    }
+    
+    #main-navigation li {
+        display: block;
+        margin: 8px 0;
+    }
+    
+    .site-branding {
+        text-align: center;
+    }
+    
+    #hero-section {
+        padding: 40px 20px;
+    }
+    
+    #hero-section h2 {
+        font-size: 24px;
+    }
+}

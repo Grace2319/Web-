@@ -1,0 +1,20 @@
+<?php include 'header.php'; ?>
+
+<!-- Main content -->
+<main id="site-content">
+    <div class="container">
+        <section id="hero-section">
+            <h2>Bienvenue sur EDUC_OTAKU !</h2>
+            <p>Plongez avec nous dans la richesse et la diversité de la culture Otaku.</p>
+            <a href="/blog" class="button">Découvrir nos articles</a>
+        </section>
+
+        <section id="about-otaku">
+            <h2>Qu'est-ce que l'Otaku ?</h2>
+            <p>Loin des clichés, le terme "Otaku" désigne au Japon une personne passionnée par un ou plusieurs domaines spécifiques, souvent liés à la culture populaire comme les mangas, les animes, les jeux vidéo, les figurines ou le cosplay. Sur EDUC_OTAKU, nous explorons ces passions avec curiosité et respect.</p>
+            <a href="/a-propos" class="button-secondary">En savoir plus</a>
+        </section>
+    </div>
+</main>
+
+<?php include 'footer.php'; ?>
